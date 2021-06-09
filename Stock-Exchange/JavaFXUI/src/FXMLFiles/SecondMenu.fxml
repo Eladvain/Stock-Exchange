@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.LineChart?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.text.Font?>
+
+
+<GridPane fx:id="gridPAneSecond" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="200.0" minWidth="200.0" prefHeight="637.0" prefWidth="1128.0" stylesheets="@../cssFiles/SecondMenu.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controllers.ControllerSecondMenu">
+  <columnConstraints>
+    <ColumnConstraints hgrow="ALWAYS" maxWidth="800.0" minWidth="10.0" prefWidth="100.0" />
+    <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+  </columnConstraints>
+  <rowConstraints>
+    <RowConstraints maxHeight="650.0" minHeight="10.0" prefHeight="100.0" vgrow="ALWAYS" />
+  </rowConstraints>
+   <children>
+      <ScrollPane prefHeight="637.0" prefWidth="861.0">
+         <content>
+            <TabPane fx:id="TabPaneAdminOrUSers" minHeight="400.0" minWidth="200.0" prefHeight="657.0" prefWidth="804.0" stylesheets="@../cssFiles/SecondMenu.css" tabClosingPolicy="UNAVAILABLE">
+              <tabs>
+                <Tab fx:id="TabAdmin" text="Admin">
+                  <content>
+                    <AnchorPane maxWidth="876.0" minHeight="400.0" minWidth="200.0" prefHeight="618.0" prefWidth="876.0" styleClass="AnvhorPaneBackRound">
+                           <children>
+                              <AnchorPane layoutY="9.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="577.0" prefWidth="778.0" AnchorPane.bottomAnchor="32.0" AnchorPane.rightAnchor="24.0" AnchorPane.topAnchor="9.0">
+                                 <children>
+                                    <Label layoutX="14.0" layoutY="37.0" prefHeight="27.0" prefWidth="187.0" text="Buying Transaction " textFill="WHITE">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Label layoutX="9.0" layoutY="222.0" text="Selling Transactions " textFill="WHITE">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <TableView fx:id="TableViewBuying" layoutY="74.0" prefHeight="138.0" prefWidth="776.0" />
+                                    <TableView fx:id="TableViewSelling" layoutY="249.0" prefHeight="138.0" prefWidth="776.0">
+                                       <columns>
+                                          <TableColumn fx:id="ColumnSellingTime" prefWidth="179.0" text="Time" />
+                                          <TableColumn fx:id="ColumnSellingMKTLMT" prefWidth="133.0" text="LMT/MKT" />
+                                          <TableColumn fx:id="ColumnSellingAmount" prefWidth="131.0" text="Amount" />
+                                          <TableColumn fx:id="ColumnSellingPrice" prefWidth="130.0" text="Price" />
+                                          <TableColumn fx:id="ColumnSellingInitalize" prefWidth="202.0" text="intialize transaction name" />
+                                       </columns>
+                                    </TableView>
+                                    <TableView fx:id="TableViewExecuted" layoutY="421.0" prefHeight="138.0" prefWidth="776.0" />
+                                    <Label layoutX="14.0" layoutY="387.0" text="Executed Transactions " textFill="WHITE">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <ChoiceBox fx:id="ChoicePickerStockToDisplay" layoutX="444.0" layoutY="5.0" prefWidth="150.0" />
+                                    <Label layoutX="14.0" prefHeight="31.0" prefWidth="430.0" text="choose stock in order to view all transcations " textFill="WHITE">
+                                       <font>
+                                          <Font name="System Bold Italic" size="20.0" />
+                                       </font>
+                                    </Label>
+                                    <Button fx:id="ButtomSaveSystemSate" alignment="CENTER" layoutX="634.0" mnemonicParsing="false" onAction="#buttonSaveSystemStateClicked" prefHeight="63.0" prefWidth="142.0" text="save system state" textAlignment="RIGHT" />
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </AnchorPane>
+                  </content>
+                </Tab>
+                  <Tab fx:id="TabUser" text="User">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="AnvhorPaneBackRound">
+                           <children>
+                              <Pane layoutX="-2.0" prefHeight="332.0" prefWidth="807.0">
+                                 <children>
+                                    <TableView fx:id="TableViewUser" layoutX="7.0" layoutY="126.0" prefHeight="206.0" prefWidth="776.0">
+                                       <columns>
+                                          <TableColumn fx:id="UserColumnSymbol" prefWidth="228.99996948242188" text="Symbol" />
+                                          <TableColumn fx:id="UserColumnAmunt" prefWidth="256.0" text="Amount" />
+                                          <TableColumn fx:id="UserColumnStockRate" prefWidth="290.0" text="Stock Rate" />
+                                       </columns>
+                                    </TableView>
+                                    <Pane layoutX="14.0" layoutY="14.0" prefHeight="101.0" prefWidth="439.0">
+                                       <children>
+                                          <Label layoutX="14.0" layoutY="14.0" prefHeight="30.0" prefWidth="247.0" text="Value of all stocks: " textFill="WHITE">
+                                             <font>
+                                                <Font size="20.0" />
+                                             </font>
+                                          </Label>
+                                       </children>
+                                    </Pane>
+                                    <ChoiceBox fx:id="ChooseBoxUser" layoutX="623.0" layoutY="26.0" prefWidth="150.0" />
+                                    <Label layoutX="463.0" layoutY="26.0" prefHeight="31.0" prefWidth="160.0" text="Choose user:" textFill="WHITE">
+                                       <font>
+                                          <Font size="20.0" />
+                                       </font>
+                                    </Label>
+                                 </children>
+                              </Pane>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+                  <Tab fx:id="TabStockGraph" text="Stock Graph">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" styleClass="AnvhorPaneBackRound">
+                           <children>
+                              <LineChart fx:id="ChartGraphStock" layoutX="1.0" layoutY="81.0" prefHeight="515.0" prefWidth="800.0">
+                                <xAxis>
+                                  <CategoryAxis side="BOTTOM" tickLabelFill="WHITE" />
+                                </xAxis>
+                                <yAxis>
+                                  <NumberAxis side="LEFT" tickLabelFill="WHITE" />
+                                </yAxis>
+                              </LineChart>
+                              <Label layoutX="21.0" layoutY="14.0" prefHeight="65.0" prefWidth="371.0" text="Stock Rate Graph" textFill="WHITE">
+                                 <font>
+                                    <Font size="40.0" />
+                                 </font>
+                              </Label>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </Tab>
+              </tabs>
+            </TabPane>
+         </content>
+      </ScrollPane>
+      <ScrollPane fitToHeight="true" fitToWidth="true" minWidth="-Infinity" prefHeight="637.0" prefWidth="229.0" GridPane.columnIndex="1">
+         <content>
+            <AnchorPane id="PaneTransactionEnter" minHeight="-Infinity" minWidth="-Infinity" prefHeight="637.0" prefWidth="312.0">
+               <children>
+                  <Pane id="AnvhorPaneBackRound" layoutX="37.0" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="37.0" AnchorPane.rightAnchor="-20.0" AnchorPane.topAnchor="0.0">
+                     <children>
+                        <ChoiceBox fx:id="ChoicePickerTransactionType" layoutX="121.0" layoutY="53.0" prefHeight="31.0" prefWidth="140.0" />
+                        <ChoiceBox fx:id="ChoicePickerCommerceType" layoutX="123.0" layoutY="184.0" prefHeight="31.0" prefWidth="138.0" visible="false" />
+                        <ChoiceBox fx:id="ChoicePickerStockName" layoutX="123.0" layoutY="135.0" prefHeight="31.0" prefWidth="138.0" visible="false" />
+                        <TextField fx:id="TextFillAmountOfStocks" layoutX="145.0" layoutY="285.0" prefHeight="31.0" prefWidth="113.0" visible="false" />
+                        <Label layoutX="2.0" layoutY="53.0" prefHeight="31.0" prefWidth="124.0" text="Transaction Type" />
+                        <Label layoutX="7.0" layoutY="184.0" prefHeight="31.0" prefWidth="114.0" text="commerce type" />
+                        <Label layoutX="8.0" layoutY="135.0" prefHeight="31.0" prefWidth="91.0" text="Stock Name" />
+                        <Label layoutX="7.0" layoutY="285.0" prefHeight="31.0" prefWidth="134.0" text="Amount of stocks" />
+                        <Label layoutX="8.0" layoutY="234.0" prefHeight="31.0" prefWidth="91.0" text="Rate Limit " />
+                        <TextField fx:id="TextFillEateLimit" layoutX="121.0" layoutY="234.0" prefHeight="31.0" prefWidth="139.0" visible="false" />
+                        <Button fx:id="ButtonExecute" layoutX="95.0" layoutY="354.0" mnemonicParsing="false" onAction="#ButtonExecutePress" text="Execute " />
+                        <Label alignment="CENTER" layoutX="9.0" prefHeight="44.0" prefWidth="247.0" text="New Transaction ">
+                           <font>
+                              <Font size="24.0" />
+                           </font>
+                        </Label>
+                        <ChoiceBox fx:id="ChoicBoxTransactionUser" layoutX="121.0" layoutY="100.0" prefHeight="31.0" prefWidth="139.0" />
+                        <Label layoutY="105.0" prefHeight="21.0" prefWidth="108.0" text="Transaction By:" />
+                        <Polygon fx:id="poligonsecondMenu" fill="DODGERBLUE" layoutX="141.0" layoutY="479.0" points="-52.0, 40.0, 50.0, 40.0, 0.0, -60.0" stroke="BLACK" strokeType="INSIDE" />
+                        <Button fx:id="buttonAnimationStart" layoutX="79.0" layoutY="560.0" mnemonicParsing="false" onAction="#AnimationStartButton" text="Animation stop" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</GridPane>

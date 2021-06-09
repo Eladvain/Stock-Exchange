@@ -1,0 +1,23 @@
+#FirstMenuContainer{
+    -fx-background-image:url("../Images/FirstMenuInage.jpg") ;
+}
+.HeaderLable
+{
+    -fx-font-size: 30;
+    -fx-font-weight: bold;
+    -fx-text-fill: blue;
+    -fx-background-color: #e0d0d0;
+}
+
+.lablesTaskProgress
+{
+    -fx-font-size: 15;
+    -fx-font-weight: bold;
+    -fx-text-fill: green;
+
+}
+.PaneTask
+{
+
+    -fx-background-color: #e0d0d0;
+}
